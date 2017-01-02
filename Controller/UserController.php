@@ -42,6 +42,12 @@ class UserController extends TwoFactorAuthAppController {
 
     $this->Session->write('user', $user['User']['id']);
 
+    $event = new CakeEvent('afterLogin', $this, array('user' => $this->User->getAllFromUser($user['User']['pseudo'])));
+    $this->getEventManager()->dispatch($event);
+    if($event->isStopped()) {
+      return $event->result;
+    }
+
     $this->response->body(json_encode(array('statut' => true, 'msg' => $this->Lang->get('USER__REGISTER_LOGIN'))));
   }
 
