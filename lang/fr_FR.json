@@ -1,1 +1,10 @@
-{}
+{
+  "TWOFACTORAUTH__LOGIN_CODE": "Code de vérification",
+  "TWOFACTORAUTH__LOGIN_CODE_PLACEHOLDER": "Double authentification",
+  "TWOFACTORAUTH__LOGIN_CODE_EMPTY": "Veuillez remplir le code de vérification",
+  "TWOFACTORAUTH__LOGIN_INFOS_NOT_FOUND": "Les informations de la double authentification sont introuvable. Réessayez de vous connecter à nouveau.",
+  "TWOFACTORAUTH__LOGIN_CODE_INVALID": "Le code est invalide",
+  "TWOFACTORAUTH__VALID_CODE": "Activer la double authentification",
+  "TWOFACTORAUTH__SECRET_NOT_FOUND": "Des informations sont manquantes, veuillez recharger la page et rééssayer",
+  "TWOFACTORAUTH__SUCCESS_ENABLED_TWO_FACTOR_AUTH": "La double authentification a bien été activée !"
+}
