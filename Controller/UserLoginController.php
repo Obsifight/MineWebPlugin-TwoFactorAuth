@@ -1,5 +1,5 @@
 <?php
-class UserController extends TwoFactorAuthAppController {
+class UserLoginController extends TwoFactorAuthAppController {
 
   public function validLogin() {
     $this->response->type('json');
