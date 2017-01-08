@@ -27,6 +27,7 @@ class TwofactorauthLoginEventListener implements CakeEventListener {
       if($event->isStopped()) {
         return $event->result;
       }
+      return;
     }
 
     // set session
