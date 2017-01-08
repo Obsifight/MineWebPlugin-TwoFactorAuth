@@ -21,8 +21,13 @@ class TwofactorauthLoginEventListener implements CakeEventListener {
     // Check if user has twofactorauth enabled
     $model = ClassRegistry::init('TwoFactorAuth.UsersSecret');
     $infos = $model->find('first', array('conditions' => array('user_id' => $user['id'], 'enabled' => true)));
-    if (empty($infos)) // no two factor auth
-      return;
+    if (empty($infos)) { // no two factor auth
+      $event = new CakeEvent('afterLogin', $this->controller, array('user' => $user));
+      $this->controller->getEventManager()->dispatch($event);
+      if($event->isStopped()) {
+        return $event->result;
+      }
+    }
 
     // set session
     $this->controller->Session->write('user_id_two_factor_auth', $user['id']);
